@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visitor Information Form</title>
+    <link rel="stylesheet" href="formstyle.css">
+    <link rel="stylesheet" href="styleforform.css">
+
+    <div class="container">
+        <header class="form-header">
+            
+                <div style="text-align: left; padding: 10px;">
+                    <a href="webdev.html" class="logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+                      <img src="Black and Gold Minimalist Circle Hotel and Resort Logo.png" alt="The Luxury Hotel & Resort" style="height: 50px;">
+                      <span style="font-size: 18px; color:whitesmoke;">The Luxury Hotel & Resort</span>
+                    </a>
+                  </div>
+          <h1>Visitor Information</h1>
+          <p>Please share your experience with us</p>
+        </header>
+        
+        <form id="visitorForm" class="visitor-form">
+          <section class="form-section visitor-info">
+            <h2>Visitor Details</h2>
+            
+            <div class="form-group">
+              <label for="nationality">Nationality</label>
+              <div class="select-wrapper">
+                <select id="nationality" name="nationality" required>
+                  <option value="" disabled selected>Select your nationality</option>
+                  <option value="local">Local</option>
+                  <option value="foreign">Foreign</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="visitDate">Visit Date</label>
+              <input type="date" id="visitDate" name="visitDate" required>
+            </div>
+          </section>
+          
+          <section class="form-section experience-rating">
+            <h2>Experience Rating</h2>
+            
+            <div class="form-group">
+              <label>Cleanliness</label>
+              <div class="rating-group" id="cleanlinessRating">
+                <div class="rating-option">
+                  <input type="radio" id="cleanliness1" name="cleanliness" value="1" required>
+                  <label for="cleanliness1">
+                    <span class="star">★</span>
+                    <span class="rating-text">Poor</span>
+                  </label>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" id="cleanliness2" name="cleanliness" value="2">
+                  <label for="cleanliness2">
+                    <span class="star">★</span>
+                  </label>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" id="cleanliness3" name="cleanliness" value="3">
+                  <label for="cleanliness3">
+                    <span class="star">★</span>
+                    <span class="rating-text">Average</span>
+                  </label>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" id="cleanliness4" name="cleanliness" value="4">
+                  <label for="cleanliness4">
+                    <span class="star">★</span>
+                  </label>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" id="cleanliness5" name="cleanliness" value="5">
+                  <label for="cleanliness5">
+                    <span class="star">★</span>
+                    <span class="rating-text">Excellent</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>Amenities Used</label>
+              <div class="checkbox-group">
+                <div class="checkbox-option">
+                  <input type="checkbox" id="restrooms" name="amenities" value="restrooms">
+                  <label for="restrooms">Restrooms</label>
+                </div>
+                <div class="checkbox-option">
+                  <input type="checkbox" id="parking" name="amenities" value="parking">
+                  <label for="parking">Parking</label>
+                </div>
+                <div class="checkbox-option">
+                  <input type="checkbox" id="guides" name="amenities" value="guides">
+                  <label for="guides">Guides</label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="comments">Comments</label>
+              <textarea id="comments" name="comments" placeholder="Please share your thoughts about your visit"></textarea>
+            </div>
+          </section>
+          
+          <section class="form-section preparedness">
+            <h2>Preparedness Check</h2>
+            
+            <div class="form-group">
+              <label>Emergency Kit</label>
+              <div class="radio-group">
+                <div class="radio-option">
+                  <input type="radio" id="emergencyKitYes" name="emergencyKit" value="yes" required>
+                  <label for="emergencyKitYes">Yes</label>
+                </div>
+                <div class="radio-option">
+                  <input type="radio" id="emergencyKitNo" name="emergencyKit" value="no">
+                  <label for="emergencyKitNo">No</label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>Evacuation Plan</label>
+              <div class="checkbox-group">
+                <div class="checkbox-option">
+                  <input type="checkbox" id="assignedCenter" name="evacuationPlan" value="assignedCenter">
+                  <label for="assignedCenter">Assigned Center</label>
+                </div>
+                <div class="checkbox-option">
+                  <input type="checkbox" id="familyMeetingPoint" name="evacuationPlan" value="familyMeetingPoint">
+                  <label for="familyMeetingPoint">Family Meeting Point</label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="pastDisasterExperience">Past Disaster Experience</label>
+              <textarea id="pastDisasterExperience" name="pastDisasterExperience" placeholder="Please share any past experiences with natural disasters"></textarea>
+            </div>
+          </section>
+          
+          <div class="form-actions">
+            <button type="submit" id="submitButton">Submit</button>
+            <button type="reset" id="resetButton">Reset</button>
+            <button type="goback" id="backbutton" onclick="history.back()">Go Back</button>
+          </div>
+        </form>
+        
+        <div id="formSuccess" class="success-message hidden">
+          <div class="success-content">
+            <h2>Thank You!</h2>
+            <p>Your information has been submitted successfully.</p>
+            <button id="newFormButton">Submit Another Response</button>
+          </div>
+        </div>
+      </div>
+  </head>
+  <body>
+
+    <div id="app"></div>
+    <script type="module" src="form.js"></script>
+  </body>
+</html>
